@@ -5,7 +5,7 @@
 
 
 def solve(a=0, b=0, seen=set(), path=[]):
-    if a + b == 4:  # Goal: stop when the two buckets together hold exactly 4 gallons
+    if a + b == 4 or a==4: # Goal: stop when the two buckets together hold exactly 4 gallons
         return path
     seen.add((a, b)) # Remember the current state (to avoid visiting it again)           
 
@@ -27,4 +27,5 @@ def solve(a=0, b=0, seen=set(), path=[]):
 #run and print the steps
 for i, (act, state) in enumerate(solve(), 1):
     print(f"{i}) {act} -> {state}")
+
 
